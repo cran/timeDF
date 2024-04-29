@@ -261,12 +261,43 @@ Please note that when a time record of timeDF belongs to mutliple periods of per
 
 ## More tools for timeDF
 
+* time_vec(timeDF)
+
+This function returns time vector of timeDF.
+
+* tiem_var(timeDF)
+
+This function retuns the column name of times of timeDF.
+
+* select_timeDF(timeDF, colnames)
+
+This function function returns a new timeDF object with columns
+specified and the column holding time information.
+
+* sort_timeDF(timeDF, decreasing=)
+
+This function sorts records of timeDF.
+
+* validate_timeDF(timeDF, noerror=FALSE)
+
+validate_timeDF function checks whether the object is a valid timeDF
+object.
+
+* validate\_sorted\_timeDF(timeDF, noerror=FALSE)
+
+validate_timeDF function checks whether the object is a valid sorted
+timeDF object.
+
 * as.data.frame(timeDF)
 
 This function converts timeDF to data.frame
 
 
 ## More tools for periodDF
+
+* period_type(periodDF)
+
+This function returns the period type of periodDF.
 
 * vec_to_periodDF(vec, period_type, duration, units, format = "auto", labels = NULL, pre_margin = 0)
 
@@ -287,6 +318,29 @@ When periods share the same timing with their start and end, whether they are co
 * convert_periodDF(periodDF, period_type, base_date = NULL)
 
 This function converts period types of periodDF object. Conversions from "date" to "time", "time" to "date", "time" to "time_in_a_day" and "time_in_a_day" to "time" are supported.
+
+
+## Functions for a list of timeDF
+
+* validate_listTimeDF(listTimeDF, noerror=FALSE)
+
+validate_listTimeDF checks whether listTimeDF is a valid list of
+timeDF objects.
+
+
+* split\_timeDF\_by\_intervals(timeDF, byN, byUnits)
+
+This function splits timeDF into a list of timeDF objects by regular
+intervals. For example, if the interval is specified as two days,
+timeDF object is split by two day interval. The start time for this
+interval is decided by the minimum time and the interval unit in the
+original timeDF.
+
+
+* listTimeDF\_to\_timeDF(listTimeDF)
+
+listTimeDF\_to\_timeDF function combines timeDF objects into one
+timeDF.
 
 
 ## Website

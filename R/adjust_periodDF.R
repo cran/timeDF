@@ -25,6 +25,15 @@ adjust_periodDF = function(periodDF, adjStart, adjEnd, units){
         result[[start_var]] = new_start_vec
         result[[end_var]] = new_end_vec
     }else if(period_type == "time_in_a_day"){
+#        if(units == "hours"){
+#            offset1 = adjStart * 60 * 60
+#            offset2 = adjEnd * 60 * 60
+#        }else if(units == "mins"){
+#            offset1 = adjStart * 60
+#            offset2 = adjEnd * 60
+#        }else if(units == "secs"){
+#            offset1 = adjStart
+#            offset2 = adjEnd
         if(units %in% c("hours", "mins", "secs")){
             offset1 = convert_to_seconds(adjStart, unitsFrom = units)
             offset2 = convert_to_seconds(adjEnd, unitsFrom = units)
